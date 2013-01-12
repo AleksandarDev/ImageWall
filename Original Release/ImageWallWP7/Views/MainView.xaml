@@ -1,0 +1,104 @@
+﻿<!--
+//
+// Application.js
+// Creted:	12.2012.
+// Author:	Aleksandar Toplek
+//
+-->
+<phone:PhoneApplicationPage 
+    x:Class="ImageWallWP7.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+	
+	Loaded="MainViewLoaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+		<!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.RowSpan="2" Margin="0,0,0,0">
+			<ListBox x:Name="ImagesListBox" ItemsSource="{Binding Pages}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<!--<Image Source="{Binding ImageSource}" Width="{Binding Width}" />-->
+						<ContentPresenter Content="{Binding Grid}" />
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<toolkit:WrapPanel />
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+				<ListBox.Template>
+					<ControlTemplate TargetType="ListBox">
+						<ScrollViewer x:Name="scrollViewer" 
+                              BorderBrush="{TemplateBinding BorderBrush}" 
+                              BorderThickness="{TemplateBinding BorderThickness}" 
+                              Background="{TemplateBinding Background}" 
+                              Foreground="{TemplateBinding Foreground}" 
+                              Padding="{TemplateBinding Padding}" 
+                              Loaded="ScrollViewerLoaded">
+							<ItemsPresenter/>
+						</ScrollViewer>
+					</ControlTemplate>
+				</ListBox.Template>
+			</ListBox>
+		</Grid>
+
+		<!--TitlePanel contains the name of the application and page title-->
+		<Grid x:Name="TitlePanel" Background="#B2000000">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<TextBlock Text="ImageWall" FontFamily="Segoe WP Light" FontSize="72" Margin="12,10,0,-10" />
+			<TextBlock Grid.Row="1" Margin="12" Text="Select image to upload" VerticalAlignment="Center" FontFamily="Segoe WP Light" FontSize="30" />
+			<Button x:Name="TakePhotoButton" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+					Background="White" Padding="15"
+					Click="TakePhotoClick">
+				<Image Source="../Images/Camera.png" Width="32" />
+			</Button>
+		</Grid>
+	</Grid>
+
+	<!-- Page trnsition animations -->
+	<toolkit:TransitionService.NavigationInTransition>
+		<toolkit:NavigationInTransition>
+			<toolkit:NavigationInTransition.Backward>
+				<toolkit:TurnstileTransition Mode="BackwardIn"/>
+			</toolkit:NavigationInTransition.Backward>
+			<toolkit:NavigationInTransition.Forward>
+				<toolkit:TurnstileTransition Mode="ForwardIn"/>
+			</toolkit:NavigationInTransition.Forward>
+		</toolkit:NavigationInTransition>
+	</toolkit:TransitionService.NavigationInTransition>
+	<toolkit:TransitionService.NavigationOutTransition>
+		<toolkit:NavigationOutTransition>
+			<toolkit:NavigationOutTransition.Backward>
+				<toolkit:TurnstileTransition Mode="BackwardOut"/>
+			</toolkit:NavigationOutTransition.Backward>
+			<toolkit:NavigationOutTransition.Forward>
+				<toolkit:TurnstileTransition Mode="ForwardOut"/>
+			</toolkit:NavigationOutTransition.Forward>
+		</toolkit:NavigationOutTransition>
+	</toolkit:TransitionService.NavigationOutTransition>
+</phone:PhoneApplicationPage>

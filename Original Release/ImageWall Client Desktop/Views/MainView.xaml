@@ -1,0 +1,18 @@
+﻿<Window x:Class="ImageWallClientDesktop.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		
+		Loaded="MainViewLoaded"
+		
+        Title="ImageWall Desktop Client" Height="350" Width="525">
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		
+        <TextBox x:Name="imageTagTextBox" Grid.Row="0">BEST</TextBox>
+		<Button x:Name="getDataButton" Click="GetDataButton_OnClick" Grid.Row="1">Get Data</Button>
+    </Grid>
+</Window>

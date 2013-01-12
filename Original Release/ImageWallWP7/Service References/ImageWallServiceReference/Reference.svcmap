@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eca11362-568d-47b1-8cf9-41989db25a29" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.team95.host25.com/ImageWallService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ImageWallService.xsd" MetadataType="Schema" ID="e6bf53a0-ac0e-40e1-afa6-f965a9abde6d" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ImageWallService1.xsd" MetadataType="Schema" ID="bd8a6eb9-4863-4cd6-9fb6-e73cd64bcd49" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ImageWallService2.xsd" MetadataType="Schema" ID="30c844e4-2f8e-4225-a0f3-471c9af06718" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ImageWallService3.xsd" MetadataType="Schema" ID="e70549b6-ac93-40a6-933c-51dee1377140" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ImageWallService.wsdl" MetadataType="Wsdl" ID="aeaf6750-ef36-4cf1-b2d0-a03ab3f374b4" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?wsdl" />
+    <MetadataFile FileName="ImageWallService.disco" MetadataType="Disco" ID="162bc7f7-4f49-4d31-a9b4-5a26e41f8981" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?disco" />
+    <MetadataFile FileName="ImageWallService4.xsd" MetadataType="Schema" ID="65b80a15-9bd9-45a0-9a06-2193eb636975" SourceId="1" SourceUrl="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

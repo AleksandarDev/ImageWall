@@ -1,0 +1,40 @@
+﻿div.iw-Spinner {
+	position: relative;
+
+	height: 72px;
+	width: 72px;
+	overflow: hidden;
+	margin: 20px auto;
+
+	z-index: 1000;
+}
+	div.iw-Spinner div {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+
+		width: 6%;
+		height: 20%;
+
+		border-radius: 50px;
+
+		opacity: 0;
+		background: purple;
+		box-shadow: 0 0 4px #000000;
+		box-shadow: 0 0 4px rgba(0,0,0,0.4);
+
+		z-index: 1000;
+	}
+
+@-moz-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.1; }
+}
+@-webkit-keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.1; }
+}
+@keyframes fade {
+	from { opacity: 1; }
+	to { opacity: 0.1; }
+}

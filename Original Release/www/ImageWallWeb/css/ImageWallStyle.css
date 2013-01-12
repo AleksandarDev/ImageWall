@@ -1,0 +1,80 @@
+﻿.TagsCloud {
+	overflow: auto;
+	width: auto;
+	max-width: 60%;
+	margin: 20px auto;
+	display: table;
+	text-align: center;
+}	
+
+	.TagElement:link,
+	.TagElement:visited,
+	.TagElement:active,
+	.TagElement {
+		margin: 5px;
+		display: inline-block;
+
+		color: black;
+		text-decoration: none;
+	}
+		.TagElement:hover {
+			-webkit-text-shadow: 0 0 3px #CCC;
+			text-shadow: 0 0 3px #CCC;
+
+			cursor: pointer;
+		}
+
+.ImagesHolderRoot {
+	position: relative;
+	/*width: 1100px;*/
+
+	visibility: hidden;
+
+	margin: 10px auto;
+}
+
+.ImageThumbnailHolder {
+	padding: 15px;
+	width: 100%;
+	background: white;
+	border: 1px solid #BBB;
+
+	box-shadow: 0 1px 3px #221919;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;
+	transition: top 1s ease, left 1s ease;
+
+	overflow: visible !important;
+}
+	.ImageThumbnailHolder:hover {
+		z-index: 999;
+	}
+	.ImageThumbnailHolder:hover .ImageThumbnailHolderCorner {
+		display: initial;
+	}
+	.ImageThumbnailHolderCorner {
+		position: absolute;
+		right: -8px;bottom: -8px;
+
+		cursor: pointer;
+		display: none;
+
+		z-index: 1000;
+	}
+			
+.ImageThumbnail {
+	width: 100%;
+	max-width: 200px;
+	display: block;
+}
+
+.ImageDetails {
+	width: 100%;
+	max-width: 200px;
+	display: none;
+
+	cursor: default;
+}

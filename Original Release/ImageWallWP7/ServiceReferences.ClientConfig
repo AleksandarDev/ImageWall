@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IImageWallService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://www.team95.host25.com/ImageWallService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IImageWallService"
+                contract="ImageWallServiceReference.IImageWallService" name="BasicHttpBinding_IImageWallService" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ImageWallServiceDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ImageWallServiceDataModelStoreContainer">
+    <EntitySet Name="ImageDetailsSet" EntityType="ImageWallServiceDataModel.Store.ImageDetailsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImageTagSet" EntityType="ImageWallServiceDataModel.Store.ImageTagSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="ImageWallServiceDataModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImageTagImageDetails" EntityType="ImageWallServiceDataModel.Store.ImageTagImageDetails" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserImageTag" Association="ImageWallServiceDataModel.Store.UserImageTag">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="ImageTag" EntitySet="ImageTagSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserImageDetails" Association="ImageWallServiceDataModel.Store.UserImageDetails">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="ImageDetails" EntitySet="ImageDetailsSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageTagImageDetails_ImageTag" Association="ImageWallServiceDataModel.Store.FK_ImageTagImageDetails_ImageTag">
+      <End Role="ImageTag" EntitySet="ImageTagSet" />
+      <End Role="ImageTagImageDetails" EntitySet="ImageTagImageDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageTagImageDetails_ImageDetails" Association="ImageWallServiceDataModel.Store.FK_ImageTagImageDetails_ImageDetails">
+      <End Role="ImageDetails" EntitySet="ImageDetailsSet" />
+      <End Role="ImageTagImageDetails" EntitySet="ImageTagImageDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ImageDetailsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hash" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="URL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="URLThumb" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageTagSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alias" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+    <Property Name="IsPopular" Type="bit" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsRegistered" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageTagImageDetails">
+    <Key>
+      <PropertyRef Name="ImageTag_Id" />
+      <PropertyRef Name="ImageDetails_Id" />
+    </Key>
+    <Property Name="ImageTag_Id" Type="int" Nullable="false" />
+    <Property Name="ImageDetails_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserImageTag">
+    <End Role="User" Type="ImageWallServiceDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="ImageTag" Type="ImageWallServiceDataModel.Store.ImageTagSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImageTag">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserImageDetails">
+    <End Role="User" Type="ImageWallServiceDataModel.Store.UserSet" Multiplicity="1" />
+    <End Role="ImageDetails" Type="ImageWallServiceDataModel.Store.ImageDetailsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImageDetails">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageTagImageDetails_ImageTag">
+    <End Role="ImageTag" Type="ImageWallServiceDataModel.Store.ImageTagSet" Multiplicity="1" />
+    <End Role="ImageTagImageDetails" Type="ImageWallServiceDataModel.Store.ImageTagImageDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImageTag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImageTagImageDetails">
+        <PropertyRef Name="ImageTag_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageTagImageDetails_ImageDetails">
+    <End Role="ImageTagImageDetails" Type="ImageWallServiceDataModel.Store.ImageTagImageDetails" Multiplicity="*" />
+    <End Role="ImageDetails" Type="ImageWallServiceDataModel.Store.ImageDetailsSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ImageDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImageTagImageDetails">
+        <PropertyRef Name="ImageDetails_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ImageWallServiceDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="ImageWallServiceDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ImageDetailsSet" EntityType="ImageWallServiceDataModel.ImageDetails" />
+          <EntitySet Name="ImageTagSet" EntityType="ImageWallServiceDataModel.ImageTag" />
+          <EntitySet Name="UserSet" EntityType="ImageWallServiceDataModel.User" />
+          <AssociationSet Name="UserImageTag" Association="ImageWallServiceDataModel.UserImageTag">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="ImageTag" EntitySet="ImageTagSet" />
+          </AssociationSet>
+          <AssociationSet Name="UserImageDetails" Association="ImageWallServiceDataModel.UserImageDetails">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="ImageDetails" EntitySet="ImageDetailsSet" />
+          </AssociationSet>
+          <AssociationSet Name="ImageTagImageDetails" Association="ImageWallServiceDataModel.ImageTagImageDetails">
+            <End Role="ImageTag" EntitySet="ImageTagSet" />
+            <End Role="ImageDetails" EntitySet="ImageDetailsSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ImageDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Hash" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ImageWallServiceDataModel.UserImageDetails" FromRole="ImageDetails" ToRole="User" />
+          <NavigationProperty Name="ImageTag" Relationship="ImageWallServiceDataModel.ImageTagImageDetails" FromRole="ImageDetails" ToRole="ImageTag" />
+          <Property Type="String" Name="URL" Nullable="false" />
+          <Property Type="String" Name="URLThumb" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Alias" Nullable="false" />
+          <Property Type="Int32" Name="Size" Nullable="false" />
+          <Property Type="Boolean" Name="IsPopular" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ImageWallServiceDataModel.UserImageTag" FromRole="ImageTag" ToRole="User" />
+          <NavigationProperty Name="ImageDetails" Relationship="ImageWallServiceDataModel.ImageTagImageDetails" FromRole="ImageTag" ToRole="ImageDetails" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="IsRegistered" Nullable="false" />
+          <Property Type="String" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="ImageTag" Relationship="ImageWallServiceDataModel.UserImageTag" FromRole="User" ToRole="ImageTag" />
+          <NavigationProperty Name="ImageDetails" Relationship="ImageWallServiceDataModel.UserImageDetails" FromRole="User" ToRole="ImageDetails" />
+        </EntityType>
+        <Association Name="UserImageTag">
+          <End Type="ImageWallServiceDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="ImageWallServiceDataModel.ImageTag" Role="ImageTag" Multiplicity="*" />
+        </Association>
+        <Association Name="UserImageDetails">
+          <End Type="ImageWallServiceDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="ImageWallServiceDataModel.ImageDetails" Role="ImageDetails" Multiplicity="*" />
+        </Association>
+        <Association Name="ImageTagImageDetails">
+          <End Type="ImageWallServiceDataModel.ImageTag" Role="ImageTag" Multiplicity="*" />
+          <End Type="ImageWallServiceDataModel.ImageDetails" Role="ImageDetails" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ImageWallServiceDataModelStoreContainer" CdmEntityContainer="ImageWallServiceDataModelContainer">
+    <EntitySetMapping Name="ImageDetailsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ImageWallServiceDataModel.ImageDetails)">
+        <MappingFragment StoreEntitySet="ImageDetailsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="URLThumb" ColumnName="URLThumb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageTagSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ImageWallServiceDataModel.ImageTag)">
+        <MappingFragment StoreEntitySet="ImageTagSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="IsPopular" ColumnName="IsPopular" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ImageWallServiceDataModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserImageTag" TypeName="ImageWallServiceDataModel.UserImageTag" StoreEntitySet="ImageTagSet">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="ImageTag">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserImageDetails" TypeName="ImageWallServiceDataModel.UserImageDetails" StoreEntitySet="ImageDetailsSet">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="ImageDetails">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageTagImageDetails" TypeName="ImageWallServiceDataModel.ImageTagImageDetails" StoreEntitySet="ImageTagImageDetails">
+      <EndProperty Name="ImageTag">
+        <ScalarProperty Name="Id" ColumnName="ImageTag_Id" />
+      </EndProperty>
+      <EndProperty Name="ImageDetails">
+        <ScalarProperty Name="Id" ColumnName="ImageDetails_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

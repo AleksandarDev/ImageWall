@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWallService", "www\ImageWallService\ImageWallService.csproj", "{D3B0D814-A375-4301-9751-C47D2FD535E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{D48763C4-BCC7-41F3-8FDB-E4B165F7A86D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWallWP7", "ImageWallWP7\ImageWallWP7.csproj", "{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ImageWallWeb", "http://localhost:547/ImageWallWeb", "{7E443898-9DCB-45AE-BB35-396C020313EA}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/ImageWallWeb"
+		Debug.AspNetCompiler.PhysicalPath = "www\ImageWallWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ImageWallWeb\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ImageWallWeb"
+		Release.AspNetCompiler.PhysicalPath = "www\ImageWallWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ImageWallWeb\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "www\ImageWallWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D3B0D814-A375-4301-9751-C47D2FD535E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Release|ARM.ActiveCfg = Debug|Any CPU
+		{7E443898-9DCB-45AE-BB35-396C020313EA}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4178E35E-D7A5-4BD1-850A-D6DE499AA79C} = {D48763C4-BCC7-41F3-8FDB-E4B165F7A86D}
+	EndGlobalSection
+EndGlobal

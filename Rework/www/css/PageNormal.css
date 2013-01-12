@@ -1,0 +1,65 @@
+﻿body {
+	font-family: 'Segoe UI', 'Lucida Grande', 'DejaVu Sans', Arial, Helvetica, Sans-Serif;
+	font-size: 85%;
+
+	background: #F3F3F3;
+}
+
+.PageContainer {
+	margin: 40px auto;
+	width: 720px;
+
+	background: white;
+
+	box-shadow: 0 0 15px #AAA;
+}
+
+.PageHeader {
+	padding: 10px 20px;
+}
+	.PageHeader label {
+		font-size: 3em;
+		font-family: 'Raleway', sans-serif;
+	}
+
+.PageContent {
+	padding: 10px 10px;
+}
+
+.PageFooter {
+	padding: 20px;
+	background: #FAFAFA;
+	border-top: 1px solid #CCC;
+	box-shadow: inset 0 2px 5px #AAA;
+}
+	.PageFooter label {
+		margin: 20px auto 0 auto;
+		display: table;
+		color: #888;
+		font-size: 85%;
+	}
+	.PageFooter a:visited,
+	.PageFooter a:link,
+	.PageFooter a:active,
+	.PageFooter a {
+		text-decoration: none;
+		font-weight: bold;
+		color: #777;
+	}
+		.PageFooter a:hover {
+			color: #333;
+		}
+
+.SponsorLinks {
+	margin: 5px auto !important;
+	display: table;
+}
+	.SponsorLinks div {
+		display: table;
+		margin: 0 auto;
+	}
+	.SponsorLinks a {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 10px;
+	}

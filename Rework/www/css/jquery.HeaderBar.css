@@ -1,0 +1,7 @@
+﻿.iw-HeaderBar {
+	height: 5px;
+}
+	.iw-HeaderBar div {
+		height:100%;
+		float:left;
+	}

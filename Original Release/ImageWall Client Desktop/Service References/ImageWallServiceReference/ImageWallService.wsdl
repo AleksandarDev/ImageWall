@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ImageWallService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ImageWallService" />
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://www.team95.host25.com/ImageWallService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IImageWallService_BeginImageUploadREST_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginImageUploadREST" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_BeginImageUploadREST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginImageUploadRESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_BeginImageUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginImageUpload" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_BeginImageUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginImageUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_UploadImagePart_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadImagePart" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_UploadImagePart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadImagePartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetAllTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTags" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetAllTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetAllTagSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTagSize" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetAllTagSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTagSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetTagModified_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagModified" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetTagModified_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagModifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetTagSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagSize" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetTagSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_IsTagPopular_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsTagPopular" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_IsTagPopular_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsTagPopularResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByDate" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByAmount" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByTagDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByTagDate" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByTagDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByTagDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByTagAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByTagAmount" />
+  </wsdl:message>
+  <wsdl:message name="IImageWallService_GetImagesByTagAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImagesByTagAmountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IImageWallService">
+    <wsdl:operation name="BeginImageUploadREST">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/BeginImageUploadREST" message="tns:IImageWallService_BeginImageUploadREST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/BeginImageUploadRESTResponse" message="tns:IImageWallService_BeginImageUploadREST_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginImageUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/BeginImageUpload" message="tns:IImageWallService_BeginImageUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/BeginImageUploadResponse" message="tns:IImageWallService_BeginImageUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadImagePart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/UploadImagePart" message="tns:IImageWallService_UploadImagePart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/UploadImagePartResponse" message="tns:IImageWallService_UploadImagePart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetAllTags" message="tns:IImageWallService_GetAllTags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetAllTagsResponse" message="tns:IImageWallService_GetAllTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTagSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetAllTagSize" message="tns:IImageWallService_GetAllTagSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetAllTagSizeResponse" message="tns:IImageWallService_GetAllTagSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagModified">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetTagModified" message="tns:IImageWallService_GetTagModified_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetTagModifiedResponse" message="tns:IImageWallService_GetTagModified_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetTagSize" message="tns:IImageWallService_GetTagSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetTagSizeResponse" message="tns:IImageWallService_GetTagSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTagPopular">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/IsTagPopular" message="tns:IImageWallService_IsTagPopular_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/IsTagPopularResponse" message="tns:IImageWallService_IsTagPopular_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByDate" message="tns:IImageWallService_GetImagesByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByDateResponse" message="tns:IImageWallService_GetImagesByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByAmount" message="tns:IImageWallService_GetImagesByAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByAmountResponse" message="tns:IImageWallService_GetImagesByAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByTagDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByTagDate" message="tns:IImageWallService_GetImagesByTagDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByTagDateResponse" message="tns:IImageWallService_GetImagesByTagDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByTagAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByTagAmount" message="tns:IImageWallService_GetImagesByTagAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IImageWallService/GetImagesByTagAmountResponse" message="tns:IImageWallService_GetImagesByTagAmount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IImageWallService" type="tns:IImageWallService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BeginImageUploadREST">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/BeginImageUploadREST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginImageUpload">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/BeginImageUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadImagePart">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/UploadImagePart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTags">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetAllTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTagSize">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetAllTagSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTagModified">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetTagModified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTagSize">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetTagSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTagPopular">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/IsTagPopular" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByDate">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetImagesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByAmount">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetImagesByAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByTagDate">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetImagesByTagDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImagesByTagAmount">
+      <soap:operation soapAction="http://tempuri.org/IImageWallService/GetImagesByTagAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImageWallService">
+    <wsdl:port name="BasicHttpBinding_IImageWallService" binding="tns:BasicHttpBinding_IImageWallService">
+      <soap:address location="http://www.team95.host25.com/ImageWallService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+﻿body {
+	width: 1130px;
+	background: white;
+
+	margin: 0 auto;
+
+	font-family: "Segoe UI", "Lucida Grande", "DejaVu Sans", Arial, Helvetica, Sans-Serif;
+	font-size: 85%;
+
+	overflow: hidden;
+}
+
+.PageRoot {
+	background: white;
+}
+
+.Header {
+	display: none;
+}
+
+.Content {
+	
+}
+
+.Footer {
+	background: #FAFAFA;
+	border-top: 1px solid #CCC;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.FooterContent {
+	padding: 20px;
+}
